@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "605774815836",
+    "project_id": "brew-crew-e91ed",
+    "storage_bucket": "brew-crew-e91ed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:605774815836:android:1614773f4950b50b6afc99",
+        "android_client_info": {
+          "package_name": "com.example.crew_brew"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "605774815836-j3gsgi8pknv3kbkf16ugnvv2jga4fepp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.crew_brew",
+            "certificate_hash": "d949f922195f4a2581cf83a1542275e832d48e0e"
+          }
+        },
+        {
+          "client_id": "605774815836-2bt18675pjhfaf394843o68027d8743a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCIPbjWu4BmkBN2f5txx8i_5hELANmDug"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "605774815836-2bt18675pjhfaf394843o68027d8743a.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "605774815836-phqm4irj71mj8bgflm6bsv1ve7ofsc4c.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.crewBrew"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

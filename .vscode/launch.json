@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "crew_brew",
+            "cwd": "crew_brew",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "crew_brew (profile mode)",
+            "cwd": "crew_brew",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "crew_brew (release mode)",
+            "cwd": "crew_brew",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
