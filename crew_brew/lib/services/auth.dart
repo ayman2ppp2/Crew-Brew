@@ -53,7 +53,7 @@ class AuthService {
       UserCredential result = await _auth.createUserWithEmailAndPassword(
           email: email.trim(), password: password.trim());
       User? user = result.user;
-      await database(uid: user!.uid).updateUserData('0', 'test name', 200);
+      await database(uid: user!.uid).updateUserData('0', 'اسم شلفي', 200);
       return userModelFromUser(user);
     } catch (e) {
       return null;
