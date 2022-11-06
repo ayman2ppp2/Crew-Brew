@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:crew_brew/models/Brew.dart';
+import 'package:crew_brew/models/UserModel.dart';
 
 class database {
   final String uid;
@@ -31,5 +32,20 @@ class database {
     return brewCollection
         .snapshots()
         .map((event) => _brewListFromSnapshots(event));
+  }
+
+  UserData _userDataFromSnapshots(DocumentSnapshot snapshot) {
+    return UserData(
+        uid: uid,
+        name: snapshot.get("name"),
+        sugars: snapshot.get("sugars"),
+        strength: snapshot.get('strength'));
+  }
+
+  Stream<UserData> get userData {
+    return brewCollection
+        .doc(uid)
+        .snapshots()
+        .map((event) => _userDataFromSnapshots(event));
   }
 }

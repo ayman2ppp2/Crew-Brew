@@ -1,6 +1,6 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:crew_brew/models/Brew.dart';
 import 'package:crew_brew/screens/home/brew_tile.dart';
+import 'package:crew_brew/screens/loading.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -16,11 +16,15 @@ class _BrewListState extends State<BrewList> {
   Widget build(BuildContext context) {
     final brews = Provider.of<List<Brew>?>(context);
 
-    return ListView.builder(
-      itemCount: brews!.length,
-      itemBuilder: (context, index) {
-        return BrewTile(brew: brews[index]);
-      },
-    );
+    if (brews != null) {
+      return ListView.builder(
+        itemCount: brews.length,
+        itemBuilder: (context, index) {
+          return BrewTile(brew: brews[index]);
+        },
+      );
+    } else {
+      return loading();
+    }
   }
 }

@@ -1,8 +1,8 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:crew_brew/models/Brew.dart';
 import 'package:crew_brew/screens/home/brew_list.dart';
+import 'package:crew_brew/screens/home/settings_form.dart';
 import 'package:crew_brew/services/auth.dart';
 import 'package:crew_brew/services/database.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +20,20 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    void _showSettingsPanel() {
+      showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return Container(
+            decoration: BoxDecoration(color: Colors.brown[100]),
+            padding:
+                const EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
+            child: SettingsForm(),
+          );
+        },
+      );
+    }
+
     return StreamProvider<List<Brew>?>.value(
       value: database(uid: '').brews,
       initialData: null,
@@ -31,6 +45,10 @@ class _HomeState extends State<Home> {
           title: Text('Brew Crew'),
           elevation: 0,
           actions: [
+            IconButton(
+              onPressed: () => _showSettingsPanel(),
+              icon: const Icon(Icons.menu_rounded),
+            ),
             TextButton(
               onPressed: () async {
                 _authe.signOutFromGoogle();
@@ -44,7 +62,15 @@ class _HomeState extends State<Home> {
             ),
           ],
         ),
-        body: BrewList(),
+        body: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/coffee_bg.png'),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: BrewList(),
+        ),
       ),
     );
   }
